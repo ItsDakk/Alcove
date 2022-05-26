@@ -18,8 +18,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
-import AddButton from './AddButton';
-import EditButton from './EditButton';
+import Button from './Button';
+import LoginForm from '../forms/LoginForm';
+import RegisterEditForm from '../forms/RegisterEditForm';
 
 const drawerWidth = 240;
 
@@ -181,9 +182,8 @@ export default function MiniDrawer() {
       <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
         <DrawerHeader />
         <Typography paragraph>
-        <AddButton>Add Book</AddButton>
-        <EditButton>Edit Reading List</EditButton>
-         
+        {/* <LoginForm/> */}
+        <RegisterEditForm/>
         </Typography>
       </Box>
     </Box>

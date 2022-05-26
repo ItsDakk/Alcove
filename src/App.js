@@ -1,14 +1,17 @@
 import './App.css';
 import Navbar from './components/Navbar'
-import AddButton from './components/AddButton';
-import EditButton from './components/EditButton';
+import Button from './components/Button';
+import LoginForm from './forms/LoginForm';
+import RegisterEditForm from './forms/RegisterEditForm';
 
 
 
 function App() {
   return (
     <>
-        <Navbar></Navbar>
+        <Navbar>
+        </Navbar>
+        
         
        
     </>
