@@ -1,15 +1,15 @@
 import apiClientBasicAuth from './clientBasicAuth'
 import apiClientTokenAuth from './clientTokenAuth';
 
-const endpoint = './user'
+const endpoint = '/user'
 
-const getUser = async (cancelToken) => {
+const getUser = async (email, password, cancelToken) => {
     let error; 
     let user;
 
-    const response = await apiClientBasicAuth(cancelToken).get(endpoint)
+    const response = await apiClientBasicAuth(email, password, cancelToken).get('/login')
     if (response.ok) {
-        user = response.data.user
+        user = response.data
     } else {
         error = "An unexpected error has occured. Please try again later"
     }
