@@ -1,4 +1,5 @@
-import {createContext, useState} from 'react';
+import {createContext, useState, useReducer, useEffect} from 'react';
+import { listReducers, listActions } from '../reducers/listReducers';
 
 export const AppContext = createContext();
 
@@ -11,11 +12,19 @@ const AppContextProvider = ({children}) => {
             // Since the user information is stored as an string, we need to convert it back to an object using JSON.parse
             return JSON.parse(user)
         }
+    };
+
+    const getListFromLS = () => {
+        let list = localStorage.getBook('list')
+        if (list) {
+            return JSON.parse(list)
+        }
     }
     
     // useState for our user
     const [user, _setUser] = useState(getUserFromLS())
     const [alert, setAlert] = useState({})
+    const [list, dispatch] = useReducer(listReducers, getListFromLS() ?? [])
     
     // Need to create a Reducer for the cart 
     //cont [cart, setCart] = 

@@ -8,6 +8,7 @@ import apiUser from './api/apiUser';
 import BookMenu from './components/BookMenu';
 import UserBookCollection from './components/UserBookCollection';
 import SingleBookInfo from './components/SingleBookInfo';
+import BookCard from './components/ReadingList/BookCard';
 
 const handleAPITest = async ()=>{
   const source = CancelToken.source();
@@ -19,9 +20,10 @@ function App() {
   return (
     <>
       <Navbar>
-        <Button onClick={handleAPITest}>Test API</Button>
+        {/* <Button onClick={handleAPITest}>Test API</Button>
       <SingleBookInfo/>
-      <UserBookCollection/>
+      <UserBookCollection/> */}
+      <BookCard/>
       </Navbar> 
       
         
